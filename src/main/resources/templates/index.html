@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Webshop</title>
@@ -13,14 +13,18 @@
         <tr>
             <th>Varenavn</th>
             <th>Pris</th>
+            <th>Beskrivelse</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Kaffe</td>
-            <td>35</td>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.name}">Kaffe</td>
+            <td th:text="${product.price}">35</td>
+            <td th:text="${product.description}">lækker</td>
         </tr>
     </tbody>
+
+    <a href="create">Opret product</a>
 
 </table>
 
