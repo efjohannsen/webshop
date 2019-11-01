@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="fragments/head">
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+</head>
+<body>
+
+<h1>Update Product</h1>
+
+<form action="/update" method="post">
+    <!-- hidden input felt til at få id med -->
+    <input type="hidden" name="id" th:value="${product.id}">
+    <input type="text" name="name" th:value="${product.name}">
+    <input type="text" name="price" th:value="${product.price}">
+    <input type="text" name="description" th:value="${product.description}">
+    <!-- når der trykkes submit udføres action -->
+    <button type="submit">Update</button>
+</form>
+
+<div th:insert="fragments/bottom"></div>
+
+</body>
+</html>

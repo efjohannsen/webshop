@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:insert="fragments/head">
     <meta charset="UTF-8">
-    <title>Opret Product</title>
+    <title>Create Product</title>
 </head>
 <body>
 
-<h1>Opret nyt produkt</h1>
+<h1>Create New Product</h1>
 
 <form action="/create" method="post">
-    <input type="text" name="name" placeholder="navn">
-    <input type="text" name="price" placeholder="pris">
-    <input type="text" name="description" placeholder="beskrivelse">
-    <button type="submit">Opret</button>
+    <input type="text" name="name" placeholder="name">
+    <input type="text" name="price" placeholder="price">
+    <input type="text" name="description" placeholder="description">
+    <button type="submit">Create</button>
 </form>
+
+<div th:insert="fragments/bottom"></div>
 
 </body>
 </html>

@@ -24,4 +24,15 @@ public class ProductService {
         productRepository.create(product);
     }
 
+    public void delete(int id) {
+        productRepository.delete(id);
+    }
+
+    public Object findProductById(int id) {
+        return productRepository.findProductById(id);
+    }
+
+    public void updateProduct(Product product) {
+        productRepository.updateProduct(product);
+    }
 }

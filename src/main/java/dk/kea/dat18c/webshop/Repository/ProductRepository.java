@@ -34,4 +34,22 @@ public class ProductRepository {
         //brug template update på SQL
         template.update(sql, product.getId(), product.getName(), product.getPrice(), product.getDescription());
     }
+
+    public void delete(int id) {
+
+        String sql = "DELETE FROM products WHERE id=?";
+        template.update(sql, id);
+
+    }
+
+    public Product findProductById(int id) {
+        String sql = "SELECT * FROM products WHERE id=?";
+        RowMapper<Product> rowMapper = new BeanPropertyRowMapper<>(Product.class);
+        return template.queryForObject(sql, rowMapper, id);
+    }
+
+    public void updateProduct(Product product) {
+        String sql = "UPDATE products SET name=?, price=?, description=? WHERE id=?";
+        template.update(sql, product.getName(), product.getPrice(), product.getDescription(), product.getId());
+    }
 }
